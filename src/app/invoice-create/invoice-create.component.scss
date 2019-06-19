@@ -1,0 +1,8 @@
+.invoice-form-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .invoice-form-container > * {
+    width: 100%;
+  }
