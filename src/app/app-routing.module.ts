@@ -9,7 +9,8 @@ const routes: Routes = [
   { path : "", component : DashboardComponent},
   { path : "invoices", component : InvoiceListComponent},
   { path : "invoices/:id", component : InvoiceDetailComponent},
-  { path : "new-invoice", component : InvoiceCreateComponent}
+  { path : "new-invoice", component : InvoiceCreateComponent},
+  { path : "edit-invoice", component : InvoiceCreateComponent}
 ];
 
 @NgModule({
