@@ -1,3 +1,49 @@
-<p>
-  invoice-create works!
-</p>
+<mat-card>
+  <mat-card-title>Create New Invoice</mat-card-title>
+  <mat-card-content>
+    <mat-form-field appearance="standard">
+      <mat-label>Customer Name</mat-label>
+      <input matInput placeholder="eg: John Stuart">
+    </mat-form-field>
+    <mat-form-field appearance="standard">
+      <mat-label>Contact No</mat-label>
+      <input matInput placeholder="eg: 9878959596">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="Invoice Date" [formControl]="date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-card>
+      <mat-card-subtitle>Products Name</mat-card-subtitle>
+      <mat-form-field appearance="standard">
+        <mat-label>Product</mat-label>
+        <input matInput placeholder="eg: laxmipati suryakiran">
+      </mat-form-field>
+      <table mat-table [dataSource]="invoice.items" class="mat-elevation-z8" style="width: 100%;">
+          <ng-container matColumnDef="srNo">
+            <th mat-header-cell *matHeaderCellDef> Sr No </th>
+            <td mat-cell *matCellDef="let invoice"> {{invoice.id}} </td>
+          </ng-container>
+          <ng-container matColumnDef="productName">
+            <th mat-header-cell *matHeaderCellDef> Product Name/Description </th>
+            <td mat-cell *matCellDef="let invoice"> {{invoice.customerName}} </td>
+          </ng-container>
+          <ng-container matColumnDef="rate">
+            <th mat-header-cell *matHeaderCellDef> Rate </th>
+            <td mat-cell *matCellDef="let invoice"> {{invoice.contactNo}} </td>
+          </ng-container>
+          <ng-container matColumnDef="quantity">
+            <th mat-header-cell *matHeaderCellDef> Quantity </th>
+            <td mat-cell *matCellDef="let invoice"> {{invoice.invoiceDate | date:'medium' }} </td>
+          </ng-container>
+          <ng-container matColumnDef="price">
+            <th mat-header-cell *matHeaderCellDef> Price </th>
+            <td mat-cell *matCellDef="let invoice"> {{invoice.total}} </td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="productColumnsToDisplay"></tr>
+          <tr mat-row *matRowDef="let row; columns: productColumnsToDisplay;"></tr>
+        </table>
+    </mat-card>
+  </mat-card-content>
+</mat-card>
