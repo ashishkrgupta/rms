@@ -9,7 +9,9 @@ import { ActivatedRoute } from "@angular/router";
   styleUrls: ['./invoice-detail.component.scss']
 })
 export class InvoiceDetailComponent implements OnInit {
-
+  
+  invoice: Invoice;
+  
   constructor(private invoiceService: InvoiceService, private route: ActivatedRoute) { }
 
   ngOnInit() {
