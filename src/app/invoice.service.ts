@@ -6,7 +6,22 @@ import { Invoice } from './invoice';
 })
 export class InvoiceService {
 
-  invoices: Invoice[] = [];
+  invoices: Invoice[] = [
+    new Invoice(1,'Ashish', '1234567890', new Date(), 1234.56),
+    new Invoice(1,'Ashish', '1234567890', new Date(), 1234.56),
+    new Invoice(1,'Ashish', '1234567890', new Date(), 1234.56),
+    new Invoice(1,'Ashish', '1234567890', new Date(), 1234.56),
+    new Invoice(1,'Ashish', '1234567890', new Date(), 1234.56),
+    new Invoice(1,'Ashish', '1234567890', new Date(), 1234.56),
+    new Invoice(1,'Ashish', '1234567890', new Date(), 1234.56),
+    new Invoice(1,'Ashish', '1234567890', new Date(), 1234.56),
+    new Invoice(1,'Ashish', '1234567890', new Date(), 1234.56),
+    new Invoice(1,'Ashish', '1234567890', new Date(), 1234.56),
+    new Invoice(1,'Ashish', '1234567890', new Date(), 1234.56),
+    new Invoice(1,'Ashish', '1234567890', new Date(), 1234.56),
+    new Invoice(1,'Ashish', '1234567890', new Date(), 1234.56),
+    new Invoice(1,'Ashish', '1234567890', new Date(), 1234.56)
+  ];
 
   constructor() { }
 
