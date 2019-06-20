@@ -15,12 +15,11 @@ export class InvoiceDetailComponent implements OnInit {
   constructor(private invoiceService: InvoiceService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.invoice  = this.invoiceService.getInvoice(parseInt(this.route.snapshot.paramMap.get("id")));
-    //console.log(this.invoice);
-    // this.invoiceService.getInvoice(1).subscribe((invoice: Invoice) => {
-    //   this.invoice = invoice;
-    //   console.log(invoice);
-    // })
+    //this.invoice  = this.invoiceService.getInvoice(parseInt(this.route.snapshot.paramMap.get("id")));
+    this.invoiceService.getInvoice(1).subscribe((invoice: Invoice) => {
+      this.invoice = invoice;
+      console.log(invoice);
+    })
   }
 
 }
