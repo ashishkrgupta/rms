@@ -4,7 +4,16 @@
 
 export const environment = {
   production: false
+  
 };
+
+export const endpoints = {
+  invoiceservice: {
+    create: "http://localhost:5000/invoices",
+    list:"http://localhost:5000/invoices",
+    find:"http://localhost:5000/invoices/"
+  }
+}
 
 /*
  * For easier debugging in development mode, you can import the following file
