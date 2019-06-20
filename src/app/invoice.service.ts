@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { endpoints } from '../environments/environment'
 import { Invoice } from './invoice';
 
 @Injectable({
@@ -23,14 +25,16 @@ export class InvoiceService {
     new Invoice(1,'Ashish', '1234567890', new Date(), 1234.56)
   ];
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
   getInvoices() {
-    return this.invoices;
+    //return this.invoices;
+    return this.httpClient.get<Invoice[]>(endpoints.invoiceservice.list);
   }
 
   getInvoice(id: number) {
-    return this.invoices.filter(inv => inv.id === id)[0];
+    //return this.invoices.filter(inv => inv.id === id)[0];
+    return this.httpClient.get<Invoice>(endpoints.invoiceservice.find + id);
   }
 
   saveInvoice(invoice: Invoice) {
